@@ -1,20 +1,32 @@
 package com.example.rplaidnboardingschool;
 
-import androidx.annotation.IntegerRes;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    //Attribut, Variable, Field
+
+    //Access Modifier - Nama Class - nama Objek / nama variable
+
     private EditText etPanjang, etLebar, etTinggi;
     private Button btnHitung;
     private TextView tvHasil;
 
+
+    //Method / Function
+
+    //Syntax Error
+
+
+    //Logic Error
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +35,41 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("SNO", MainActivity.class.getSimpleName()+" onCreate");
 
+        //Binding View
         etPanjang = findViewById(R.id.etPanjang);
         etLebar = findViewById(R.id.etLebar);
         etTinggi = findViewById(R.id.etTinggi);
         btnHitung = findViewById(R.id.btnHitung);
         tvHasil =  findViewById(R.id.tvHasil);
 
+
+        btnHitung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
+
+        etLebar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Ini ET Lebar", Toast.LENGTH_SHORT).show();
+            }
+        });
+        
+        tvHasil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Halo Fathan", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         btnHitung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Integer panjang = Integer.parseInt (etPanjang.getText().toString());
                 Integer lebar = Integer.parseInt(etLebar.getText().toString());
-                Integer tinggi = Integer.parseInt(etTinggi.getText().toString());
+                int tinggi = Integer.parseInt(etTinggi.getText().toString());
 
                 tvHasil.setText(String.valueOf(panjang*lebar*tinggi));
 
@@ -70,4 +105,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+
+    }
 }
