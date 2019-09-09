@@ -6,3 +6,5 @@ EditText
 Binding View / findViewByid,
 Mengambil nilai dari edittext ==> editText.getText().toString();
 Parsing / mengubah sring ke int ==> Integer.parseInt(etTinggi.getText().toString());
+
+![alt text](https://i.imgur.com/s9z5SOz.png)
